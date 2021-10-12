@@ -1,28 +1,46 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <network ref="network"
+           :nodes="nodes"
+           :edges="edges"
+           :options="options"
+           style="height: 1500px; width: 1600px"
+  >
+  </network>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data() {
+    return {
+      dates: [],
+      variant_option: null,
+      targetInventory: "",
+      nodes: [],
+      edges: [],
+      options: {
+        edges: {
+          font: {
+            size: 30,
+          },
+          smooth: {
+            type: "continuous"
+          }
+        },
+        nodes: {
+          mass: 3,
+          physics: false,
+          shape: "box",
+          font: {
+            size: 30
+          }
+        },
+      }
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+
 </style>
